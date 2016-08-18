@@ -1,0 +1,22 @@
+{
+    "name": "ova777/dao",
+    "description": "DAO like YII",
+    "homepage": "http://github.com/ova777/dao",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["db", "mysql", "pdo"],
+    "authors": [
+        {
+            "name": "Vyacheslav Ovchinnikov",
+            "email": "ova.nsk@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "ova777\\DAO\\": "src/"
+        }
+    }
+}
