@@ -121,7 +121,7 @@ $rows = $db->createCommand()
 	->queryAll();
 ```
 
-#### 8.N Удаление данных
+#### 8.2 Удаление данных
 ```php
 //Без привязки значений
 $db->createCommand()->delete('table_name', 'id=10');
@@ -129,7 +129,7 @@ $db->createCommand()->delete('table_name', 'id=10');
 $db->createCommand()->delete('table_name', 'id=:id', array(':id'=>10));
 ```
 
-#### 8.N Обновление данных
+#### 8.3 Обновление данных
 ```php
 //Без условий
 $db->createCommand()->update(
@@ -145,12 +145,12 @@ $db->createCommand()->update(
 );
 ```
 
-#### 8.N Добавление данных
+#### 8.4 Добавление данных
 ```php
 $db->createCommand()->insert('table_name', array('column1'=>'value1', 'column2'=>'value2'));
 ```
 
-#### 8.N Получение SQL
+#### 9. Получение SQL
 ```php
 $db->createCommand()
     ->select('foo')
