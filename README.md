@@ -150,7 +150,7 @@ $db->createCommand()->update(
 $db->createCommand()->insert('table_name', array('column1'=>'value1', 'column2'=>'value2'));
 ```
 
-#### 9. Получение SQL
+### 9. Получение SQL
 ```php
 $db->createCommand()
     ->select('foo')
