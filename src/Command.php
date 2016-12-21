@@ -74,7 +74,7 @@ class Command {
 	public function set($data) {
 		$set = array();
 		foreach($data as $k=>$v) {
-			$_param = ':daoset'.$k;
+			$_param = ':'.self::bindValueKey($k);
 			$set[] = '`'.trim($k, '`').'`='.$_param;
 			$this->_params[$_param] = $v;
 		}
@@ -424,5 +424,14 @@ class Command {
 	private function tablePrefix($sql) {
 		$prefix = $this->connection->tablePrefix;
 		return strtr($sql, array('{{' => $prefix, '}}' => ''));
+	}
+
+	/**
+	 * Creates a key for the variable binding based on column name
+	 * @param string $column
+	 * @return string
+	 */
+	private static function bindValueKey($column) {
+		return 'daoset'.substr(md5($column), 0, 6);
 	}
 }
